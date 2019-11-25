@@ -9,6 +9,7 @@ if (!isset($_GET['een'])) {
 		<option value="papier">Papier</option>
 		<option value="schaar">Schaar</option>
 	</select>
+	<input type="submit" name="submit">
 </form>
 <?php
 } else {
@@ -29,7 +30,8 @@ if (!isset($_GET['twee'])) {
 		<option value="papier">Papier</option>
 		<option value="schaar">Schaar</option>
 	</select>
-	<input type="hidden" name="een" value="<?php echo $_GET['een'] ?>"
+	<input type="submit" name="submit">
+	<input type="hidden" name="een" value="<?php echo $_GET['een'] ?>">
 </form>
 <?php
 } else {
@@ -41,6 +43,7 @@ if (!isset($_GET['twee'])) {
 ?>
 <br /><br /><br />
 <?php
+if (isset($_GET["twee"])){
 $a = $_GET['een'];
 $b = $_GET['twee'];
 if ($a == "steen") {
@@ -67,5 +70,6 @@ if ($a == "steen") {
 	} elseif ($b == "schaar") {
 		echo "<h1>Het staat gelijk</h1>";
 	}
+}
 }
 ?>
